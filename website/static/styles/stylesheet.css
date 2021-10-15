@@ -1,0 +1,29 @@
+.item-desc {
+	float: left;
+	text-align: center;
+	margin: 15px;
+	font: 12px Arial;
+	width: 200p;
+	height: 210px;
+	text-decoration: none;
+	color: #38023B;
+	font-weight: bold;
+}
+
+	.item-desc img {
+		width: 130px;
+		height: 210px;
+		border-radius: 15px;
+	}
+
+	.item-desc:hover {
+		width: 170px;
+		height: 260px;
+		color: #F2F0F0;
+
+	}
+
+	.item-desc:hover img{
+		width: 190px;
+		height: 290px;
+	}

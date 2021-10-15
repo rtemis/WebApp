@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+	<h1 align="center">{{ item.name }}</h1>
+
+	<div class="item">
+		<img src={{ url_for('static', filename='images/baseimg.jpg') }} alt={{ item.imgurl }}>
+		<h2>{{ item.name }}</h2>
+
+		<p><h4>Description: </h4>
+		{{ item.description }}
+		{{ item.sellPrice }}
+		{% if item.type == 'WATL' or item.type == 'WATN' %}
+			{{ res.clockwork }}
+			{{ res.calibre }}
+			{{ res.caseMaterial }}
+			{{ res.caseShape }}
+			{{ res.caseWidth }}
+			{{ res.caseDepth }}
+			{{ res.glassType }}
+			{{ res.dial }}
+			{{ res.dialColour }}
+			{{ res.bracelet }}
+			{{ res.clasp }}
+			{{ res.features }}
+			{{ res.batteryCharge }}
+			{{ res.service }}
+			{{ res.diamondNo }}
+			{{ res.diamondCarat }}
+			{{ res.diamondQuality }}
+			{{ res.noColoured }}
+			{{ res.colours }}
+		{% elsif item.type == 'JWLL' or item.type == 'JWLF'%}
+			{{ res.design }}
+			{{ res.claspType }}
+			{{ res.chainLength }}
+			{{ res.ringSize }}
+			{{ res.ringWidth }}
+			{{ res.colour }}
+			{{ res.clarity }}
+			{{ res.cut }}
+			{{ res.quality }}
+			{{ res.material }}
+			{{ res.materialGroup }}
+			{{ res.alloy }}
+			{{ res.unitWeight }}
+		{% else %}
+			{{ res.articleGroup }}
+			{{ res.articleKind }}
+			{{ res.brand }}
+			{{ res.productLine }}
+			{{ res.collection }}
+		{% endif %}		
+		<form class= action={{ url_for('add_to_cart', item=item) }} method="post">
+			<input type="submit"  value="Add to Cart">
+		</form>
+	</div>
+
+	{% endblock %}

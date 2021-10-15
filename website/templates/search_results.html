@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+    <h3 align="center">Search Results</h3>
+    {% for r in res %}
+		<div class="item-desc">
+			<a href={{ url_for('views.home') }} method="post">
+			<img src={{ url_for('static', filename='images/baseimg.jpg') }} alt={{ r[2] }}> </a>
+			{{ r[1] }}
+		</div>
+    {% endfor %}
+  {% endblock %}

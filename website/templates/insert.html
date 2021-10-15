@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+    <form method="POST" action={{ url_for( 'views.inserted' ) }}>
+      <h3 align="center">Advanced Search</h3>
+      <div class="form-group">
+        <label for="name">Item Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="itemid">Item ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemid"
+          name="itemid"
+          placeholder="Enter item ID"
+        />
+      </div>
+
+
+
+
+      <div class="form-group">
+        <input type="radio" id="watch" name="item-type" value="Watch">
+        <label for="watch">Watch</label>
+        <input type="radio" id="gift" name="item-type" value="Gift">
+        <label for="gift">Gift</label>
+        <input type="radio" id="jewellery" name="item-type" value="Jewellery">
+        <label for="jewellery">Jewellery</label>
+      </div>
+
+
+      <div class="form-group">
+        
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='scripts/insert.js') }}"
+    ></script>
+    name = request.form['name']
+    type = request.form['type']
+    description = request.form['description']
+    imgurl = request.form['imgurl']
+    buyPrice = request.form['buyPrice']
+    sellPrice = request.form['sellPrice']
+    discount = request.form['discount']
+
+    watid = request.form['watid']
+    jwlid = request.form['jwlid']
+    gftid = request.form['gftid']
